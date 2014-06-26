@@ -11,32 +11,26 @@ describe DnaStrandPair do
   end
 
   it "calculates the distance for single nucleotide strand" do
-    skip
     expect(strand_pair("A", "G").hamming_distance).to eq(1)
   end
 
   it "calculates the distance between small strands" do
-    skip
     expect(strand_pair("AG", "CT").hamming_distance).to eq(2)
   end
 
   it "calculates the distance between two other small strands" do
-    skip
     expect(strand_pair("AT", "CT").hamming_distance).to eq(1)
   end
 
   it "calculates the distance in longer strands" do
-    skip
     expect(strand_pair("GGACG", "GGTCG").hamming_distance).to eq(1)
   end
 
   it "ignores the extra length in the first strand when it is longer" do
-    skip
-    # write this test yourself!
+    expect(strand_pair("GGACGACGTGA", "GGTCG").hamming_distance).to eq(1)
   end
 
   it "ignores the extra length in the second strand when it is longer" do
-    skip
-    # write this test yourself!
+    expect(strand_pair("GGACG", "GGTCGAGTCAG").hamming_distance).to eq(1)
   end
 end
